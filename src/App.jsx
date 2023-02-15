@@ -1,74 +1,80 @@
-import React from "react"
-import './app.scss'
-import Navbar from "./components/navbar/Navbar"
+import "./app.scss";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import React from "react";
+import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Home from "./page/home/Home"
-import Gigs from "./page/gigs/Gigs"
-import Gig from "./page/gigs/Gigs"
-import Add from "./page/add/Add"
-import Message from "./page/message/Message"
-import Messages from "./page/messages/Messages"
-// import Orders from "./page/orders/Orders"
-import Mygigs from "./page/myGigs/Mygigs"
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
+import Home from "./page/home/Home";
+import Gigs from "./page/gigs/Gigs";
+import Gig from "./page/gig/Gig";
+import Login from "./page/login/Login";
+import Register from "./page/register/Register";
+import Add from "./page/add/Add";
+import Orders from "./page/orders/Orders";
+import Messages from "./page/messages/Messages";
+import Message from "./page/message/Message";
+import MyGigs from "./page/myGigs/Mygigs";
 
 function App() {
-
   const Layout = () => {
-    <>
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
-    </>
-  }
+    return (
+      <div className="app">
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </div>
+    );
+  };
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout/>,
+      element: <Layout />,
       children: [
         {
           path: "/",
-          element: <Home/>
+          element: <Home />,
         },
         {
           path: "/gigs",
-          element: <Gigs/>
+          element: <Gigs />,
         },
         {
-          path: "/gig/:id",
-          element: <Gig/>
+          path: "/myGigs",
+          element: <MyGigs />,
         },
         {
-          path: "/mygigs",
-          element: <Mygigs/>
-        },
-        // {
-        //   path: "/orders",
-        //   element: <Orders/>
-        // },
-        {
-          path: "/add",
-          element: <Add/>
+          path: "/orders",
+          element: <Orders />,
         },
         {
           path: "/messages",
-          element: <Messages/>
+          element: <Messages />,
         },
         {
           path: "/message/:id",
-          element: <Message/>
+          element: <Message />,
         },
-      ]
-    }
+        {
+          path: "/add",
+          element: <Add />,
+        },
+        {
+          path: "/gig/:id",
+          element: <Gig />,
+        },
+      ],
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
   ]);
 
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
