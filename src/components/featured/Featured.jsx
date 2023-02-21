@@ -24,7 +24,7 @@ const Featured = () => {
                 </div>
             </div>
             <div className="right">
-                <img src='./images/apaar_thumbnail.png' alt=''/>
+                <img src='./images/ad-removebg-preview.png' alt=''/>
             </div>
         </div>
     </div>
