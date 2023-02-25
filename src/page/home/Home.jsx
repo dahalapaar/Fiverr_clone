@@ -58,10 +58,28 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="features">
+      <div className="features dark">
         <div className="container">
           <div className="item">
-            
+            <h1>Apaar Business</h1>
+            <h1>A business solution designed for teams</h1>
+            <p>
+              Upgrade to a curated experience packed with tools and benefits,
+              dedicated to business.
+            </p>
+            <div className="title">
+              <img src="./images/check.png" alt="" />
+              Connect to freelancers with proven business experience 
+            </div>
+            <div className="title">
+              <img src="./images/check.png" alt="" />
+              Connect to freelancers with proven business experience 
+            </div>
+            <div className="title">
+              <img src="./images/check.png" alt="" />
+              Connect to freelancers with proven business experience 
+            </div>
+            <button>Explore Apaar business</button>
           </div>
           <div className="item">
           <img
